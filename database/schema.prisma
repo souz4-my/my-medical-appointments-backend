@@ -1,0 +1,19 @@
+datasource db {
+  provider = "mongodb"
+  url      = "mongodb+srv://root:Cg9TRTzZPhMKA3v1@cluster0.sj7f8pp.mongodb.net/MyMedicalAppointments?retryWrites=true"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Appointment {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  email       String
+  date        DateTime
+  description String
+  rememberIn  DateTime @map("remember_in")
+
+  @@map("appointments")
+}
