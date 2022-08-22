@@ -1,6 +1,6 @@
 datasource db {
   provider = "mongodb"
-  url      = "mongodb+srv://root:Cg9TRTzZPhMKA3v1@cluster0.sj7f8pp.mongodb.net/MyMedicalAppointments?retryWrites=true"
+  url      = env("DATABASE_URL")
 }
 
 generator client {
